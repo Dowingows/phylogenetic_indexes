@@ -6,23 +6,21 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
 
-    name='dokr',
+    name='phylogenetic_features',
 
     version='0.1',
 
-    scripts=['dokr'],
+    author="Domingos Dias",
 
-    author="Deepak Kumar",
+    author_email="domingos.adj@nca.ufma.br",
 
-    author_email="deepak.kumar.iet@gmail.com",
-
-    description="A Docker and AWS utility package",
+    description="A package to extract phylogenetic features",
 
     long_description=long_description,
 
     long_description_content_type="text/markdown",
 
-    url="https://github.com/javatechy/dokr",
+    url="https://github.com/Dowingows/phylogenetic_features",
 
     packages=setuptools.find_packages(),
 
