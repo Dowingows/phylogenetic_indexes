@@ -24,3 +24,13 @@ mkdocstrings-python = "^1.7.5"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+addopts = "--doctest-modules"
+
+[tool.taskipy.tasks]
+lint = "blue --check  --diff ."
+docs = "mkdocs serve"
+test = "pytest -s -x --cov=phylogenetic_indices -vv" 
+post_test = "coverage html"
