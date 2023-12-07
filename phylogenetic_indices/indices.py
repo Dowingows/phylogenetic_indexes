@@ -27,4 +27,4 @@ def species_richness(features: np) -> int:
 
         return num_species
     else:
-        raise ValueError('Tipo de características não suportado.')
+        raise ValueError('Unsupported data type')
