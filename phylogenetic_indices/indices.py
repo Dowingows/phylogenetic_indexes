@@ -15,10 +15,10 @@ def species_richness(features: np) -> int:
         ValueError: Se o tipo de características não for suportado (não é uma matriz NumPy).
 
     Examples:
-    >>> import numpy as np
-    >>> features = np.array([1, 2, 3, 1, 2, 3, 4])
-    >>> species_richness(features)
-    4
+        >>> import numpy as np
+        >>> features = np.array([1, 2, 3, 1, 2, 3, 4])
+        >>> species_richness(features)
+        4
     """
     if isinstance(features, np.ndarray):
 
@@ -41,10 +41,10 @@ def taxonomic_distinction(hist: np) -> int:
       O índice de distinção taxonômica.
 
     Examples:
-    >>> import numpy as np
-    >>> hist = np.array([10, 20, 30])
-    >>> taxonomic_distinction(hist)
-    0.7909604519774012
+        >>> import numpy as np
+        >>> hist = np.array([10, 20, 30])
+        >>> taxonomic_distinction(hist)
+        0.7909604519774012
     """
 
     # num_species = len(hist)
