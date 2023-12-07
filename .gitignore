@@ -1,0 +1,24 @@
+# Ignorar arquivos/pastas do ambiente do Poetry
+__pypackages__/
+
+
+# Ignorar arquivos gerados pelo Poetry
+*.egg-info/
+dist/
+
+# Ignorar arquivos gerados por IDEs
+.vscode/
+.idea/
+
+# Ignorar arquivos de ambiente
+.env
+.env.*
+
+# Ignorar arquivos de cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar arquivos de logs
+*.log
