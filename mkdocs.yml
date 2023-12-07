@@ -2,3 +2,9 @@ site_name: Índices Filogenéticos
 repo_url: https://github.com/Dowingows/phylogenetic_indices
 repo_name: Dowingows/phylogenetic_indices
 edit_uri: tree/main/docs
+
+plugins:
+- mkdocstrings:
+    handlers:
+      python:
+        paths: [phylogenetic_indices]

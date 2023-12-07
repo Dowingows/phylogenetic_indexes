@@ -7,6 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+numpy = "^1.26.2"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -14,6 +15,7 @@ pytest = "^7.4.3"
 pytest-cov = "^4.1.0"
 blue = "^0.9.1"
 taskipy = "^1.12.2"
+isort = "^5.12.0"
 
 
 [tool.poetry.group.doc.dependencies]
@@ -29,8 +31,12 @@ build-backend = "poetry.core.masonry.api"
 pythonpath = "."
 addopts = "--doctest-modules"
 
+[tool.isort]
+profile = "black"
+line_length = 79
+
 [tool.taskipy.tasks]
-lint = "blue --check  --diff ."
+lint = "blue --check  --diff . && isort --check --diff ."
 docs = "mkdocs serve"
 pre_test = "task lint" 
 test = "pytest -s -x --cov=phylogenetic_indices -vv" 
