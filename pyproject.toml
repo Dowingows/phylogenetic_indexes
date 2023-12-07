@@ -32,5 +32,6 @@ addopts = "--doctest-modules"
 [tool.taskipy.tasks]
 lint = "blue --check  --diff ."
 docs = "mkdocs serve"
+pre_test = "task lint" 
 test = "pytest -s -x --cov=phylogenetic_indices -vv" 
 post_test = "coverage html"
