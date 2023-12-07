@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def count_species(features: np) -> int:
+def species_richness(features: np) -> int:
     """
     Conta o número de espécies com base nas características fornecidas.
 
@@ -17,7 +17,7 @@ def count_species(features: np) -> int:
     Examples:
     >>> import numpy as np
     >>> features = np.array([1, 2, 3, 1, 2, 3, 4])
-    >>> count_species(features)
+    >>> species_richness(features)
     4
     """
     if isinstance(features, np.ndarray):
