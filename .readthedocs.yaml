@@ -3,7 +3,6 @@
 
 # Required
 version: 2
-name: readthedocs
 
 # Set the version of Python and other tools you might need
 build:
