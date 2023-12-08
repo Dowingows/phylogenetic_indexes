@@ -1,17 +1,20 @@
 # Índices Filogenéticos
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## Visão Geral
 
-## Commands
+Índices Filogenéticos uma biblioteca Python que fornece funções para calcular vários índices de diversidade taxonômica (TD) a partir de histogramas de abundância de espécies. Estes índices são úteis para quantificar a diversidade e a composição de comunidades ecológicas
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## Funcionalidades:
 
-## Project layout
+- Cálculo de riqueza de espécies.
+- Cálculo do índice de distinção taxonômica (∆∗).
+- Cálculo do índice de diversidade taxonômica (∆).
+- Cálculo da entropia quadrática extensiva (F).
+- Cálculo da entropia quadrática intensiva (J).
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+::: indices
+
+
+```bash
+pip install phylogenetic-indices
+```
