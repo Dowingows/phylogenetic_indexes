@@ -45,7 +45,7 @@ def taxonomic_distinction(hist: np) -> float:
         >>> import numpy as np
         >>> hist = np.array([10, 20, 30])
         >>> taxonomic_distinction(hist)
-        0.7777777777777778
+        1.2727272727272727
     """
 
     if not isinstance(hist, np.ndarray):
@@ -60,9 +60,10 @@ def taxonomic_distinction(hist: np) -> float:
         taxonomic_distance = 0
         individual_number_product = 0
         for j in range(richness):
-            dist = abs(i - j)
-            taxonomic_distance += dist * hist[i] * hist[j]
-            individual_number_product += hist[i] * hist[j]
+            if i < j:
+                dist = abs(i - j)
+                taxonomic_distance += dist * hist[i] * hist[j]
+                individual_number_product += hist[i] * hist[j]
 
         taxonomic_diversity_distancies.append(taxonomic_distance)
         individual_number_products.append(individual_number_product)
@@ -90,7 +91,7 @@ def taxonomic_diversity(hist: np) -> float:
         >>> import numpy as np
         >>> hist = np.array([10, 20, 30])
         >>> taxonomic_diversity(hist)
-        1.5819209039548023
+        0.7909604519774012
     """
 
     if not isinstance(hist, np.ndarray):
@@ -102,8 +103,9 @@ def taxonomic_diversity(hist: np) -> float:
     for i in range(richness):
         taxonomic_distance = 0
         for j in range(richness):
-            dist = abs(i - j)
-            taxonomic_distance += dist * hist[i] * hist[j]
+            if i < j:
+                dist = abs(i - j)
+                taxonomic_distance += dist * hist[i] * hist[j]
 
         taxonomic_diversity_distancies.append(taxonomic_distance)
 
