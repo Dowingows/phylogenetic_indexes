@@ -3,8 +3,20 @@ repo_url: https://github.com/Dowingows/phylogenetic_indices
 repo_name: Dowingows/phylogenetic_indices
 edit_uri: tree/main/docs
 
+markdown_extensions:
+  - pymdownx.tasklist  
+
 plugins:
+- macros:
 - mkdocstrings:
     handlers:
       python:
         paths: [phylogenetic_indices]
+
+extra: 
+  commands: 
+    install: pip install phylogenetic-indices
+    docs: task docs
+    lint: task lint
+    test: task lint
+    clone_repo: git clone https://github.com/Dowingows/phylogenetic_indices
