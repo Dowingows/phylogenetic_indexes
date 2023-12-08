@@ -20,3 +20,4 @@ extra:
     lint: task lint
     test: task lint
     clone_repo: git clone https://github.com/Dowingows/phylogenetic_indices
+    install_deps: poetry install

@@ -8,3 +8,5 @@ Aqui estão algumas tarefas que você pode considerar ao contribuir para o proje
 - [ ] Implementar **The Phylogenetic Diversity** (PD_node) (índice que calcula o comprimento total mínimo de todos os ramos filogenéticos necessários para medir um táxon em uma árvore filogenética)
 - [ ] Implementar (PD_root) (índice calcula o número de nós dentro do caminho de abrangência enraizado (máximo))
 - [ ] Implementar **Average Phylogenetic Diversity** proposto por [Vane-Wright et al. 1991]  (calcular a soma das contribuições de cada espécie para a diversidade e a soma dos pesos táxis padronizados, respectivamente)
+
+**Nota:** Para tarefas não listadas nesta documentação, você pode consultas as [issues do projeto](https://github.com/Dowingows/phylogenetic_indices/issues)

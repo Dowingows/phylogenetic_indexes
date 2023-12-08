@@ -10,6 +10,13 @@ Certifique-se de clonar o repositório para o seu ambiente local antes de fazer 
 {{ commands.clone_repo }}
 ```
 
+### Como instalar dependências
+
+```bash
+{{ commands.install_deps }}
+```
+
+
 ### Verificação de código
 
 Antes de enviar uma solicitação de pull, é importante garantir que o código esteja formatado corretamente e siga as diretrizes do projeto.
