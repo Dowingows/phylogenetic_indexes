@@ -15,7 +15,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install project dependencies
-        uses: poetry install --without doc
+        run: poetry install --without doc
       
       - name: Run tests
         run: poetry run task test
