@@ -55,8 +55,9 @@ def taxonomic_distinction(hist: np) -> int:
     if not isinstance(hist, np.ndarray):
         raise ValueError('Unsupported data type')
 
-    # num_species = len(hist)
-    num_species = species_richness(hist)
+    hist = hist[hist > 0]
+
+    num_species = len(hist)
 
     mean_dist = 0
     for i in range(num_species):
