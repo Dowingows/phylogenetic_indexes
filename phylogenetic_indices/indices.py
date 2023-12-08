@@ -87,6 +87,7 @@ def taxonomic_diversity(hist: np) -> int:
 
     Returns:
         O índice de diversidade taxonômica.
+
     Examples:
         >>> import numpy as np
         >>> hist = np.array([10, 20, 30])
