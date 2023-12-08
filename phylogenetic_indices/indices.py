@@ -1,28 +1,28 @@
 import numpy as np
 
 
-def species_richness(features: np) -> int:
+def species_richness(hist: np) -> int:
     """
-    Conta o número de espécies com base nas características fornecidas.
+    Conta o número de espécies de uma imagem com base em um histograma fornecido.
 
     Parameters:
-        features: A entrada que representa as características da imagem.
+        hist: A entrada que representa o histograma da imagem.
 
     Returns:
-        O número de espécies presentes nas características.
+        O número de espécies únicas presentes no histograma.
 
     Raises:
-        ValueError: Se o tipo de características não for suportado (não é uma matriz NumPy).
+        ValueError: Se o tipo de características não for suportado (não é uma array NumPy).
 
     Examples:
         >>> import numpy as np
-        >>> features = np.array([1, 2, 3, 1, 2, 3, 4])
-        >>> species_richness(features)
+        >>> hist = np.array([1, 2, 3, 1, 2, 3, 4])
+        >>> species_richness(hist)
         4
     """
-    if isinstance(features, np.ndarray):
+    if isinstance(hist, np.ndarray):
 
-        unique_species = np.unique(features)
+        unique_species = np.unique(hist)
         num_species = len(unique_species)
 
         return num_species
@@ -34,11 +34,16 @@ def taxonomic_distinction(hist: np) -> int:
     """
     Calcula o índice de distinção taxonômica.
 
+    Esta função recebe um histograma de abundância de espécies como entrada e retorna o índice de distinção taxonômica. A função calcula a distância taxonômica média entre todos os pares de espécies, ponderada por suas abundâncias, e então divide esse valor pela abundância total ao quadrado.
+
     Args:
       hist: Um histograma de abundância de espécies.
 
     Returns:
       O índice de distinção taxonômica.
+
+    Raises:
+        ValueError: Se o tipo de características não for suportado (não é uma array NumPy).
 
     Examples:
         >>> import numpy as np
@@ -46,6 +51,9 @@ def taxonomic_distinction(hist: np) -> int:
         >>> taxonomic_distinction(hist)
         0.7909604519774012
     """
+
+    if not isinstance(hist, np.ndarray):
+        raise ValueError('Unsupported data type')
 
     # num_species = len(hist)
     num_species = species_richness(hist)
