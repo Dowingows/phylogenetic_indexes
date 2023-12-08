@@ -51,23 +51,21 @@ def taxonomic_distinction(hist: np) -> int:
     if not isinstance(hist, np.ndarray):
         raise ValueError('Unsupported data type')
 
-    num_species = species_richness(hist)
+    richness = species_richness(hist)
 
     taxonomic_diversity_distancies = []
     individual_number_products = []
 
-    for i in range(num_species):
+    for i in range(richness):
         taxonomic_distance = 0
         individual_number_product = 0
-        for j in range(num_species):
+        for j in range(richness):
             dist = abs(i - j)
             taxonomic_distance += dist * hist[i] * hist[j]
             individual_number_product += hist[i] * hist[j]
 
         taxonomic_diversity_distancies.append(taxonomic_distance)
         individual_number_products.append(individual_number_product)
-
-    total_number_species = np.sum(hist)
 
     taxonomic_diversity = np.sum(taxonomic_diversity_distancies) / (
         np.sum(individual_number_products)
