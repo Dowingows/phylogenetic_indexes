@@ -18,5 +18,5 @@ jobs:
         uses: poetry install --without doc
       
       - name: Run tests
-        uses: poetry run task test
+        run: poetry run task test
  
