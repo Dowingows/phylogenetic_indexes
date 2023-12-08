@@ -18,16 +18,12 @@ def species_richness(hist: np) -> int:
         >>> import numpy as np
         >>> hist = np.array([1, 2, 3, 1, 2, 3, 4])
         >>> species_richness(hist)
-        4
+        7
     """
-    if isinstance(hist, np.ndarray):
-
-        unique_species = np.unique(hist)
-        num_species = len(unique_species)
-
-        return num_species
-    else:
+    if not isinstance(hist, np.ndarray):
         raise ValueError('Unsupported data type')
+
+    return len(hist)
 
 
 def taxonomic_distinction(hist: np) -> int:
