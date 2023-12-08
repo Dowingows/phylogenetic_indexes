@@ -26,7 +26,7 @@ def species_richness(hist: np) -> int:
     return len(hist)
 
 
-def taxonomic_distinction(hist: np) -> int:
+def taxonomic_distinction(hist: np) -> float:
     """
     Calcula o índice de distinção taxonômica.
 
@@ -74,7 +74,7 @@ def taxonomic_distinction(hist: np) -> int:
     return taxonomic_diversity
 
 
-def taxonomic_diversity(hist: np) -> int:
+def taxonomic_diversity(hist: np) -> float:
     """
     Calcula o índice de diversidade taxonômica.
 
@@ -116,3 +116,41 @@ def taxonomic_diversity(hist: np) -> int:
     )
 
     return taxonomic_diversity
+
+
+def extensive_quadratic_entropy(hist: np) -> float:
+
+    """
+    Calcula a extensa entropia quadrática (F)
+
+    A extensa entropia quadrática (F) calcula a soma de todas as distâncias filogenéticas pareadas.
+
+    Args:
+      hist: Histograma de abundância de espécies.
+
+    Returns:
+        A extensa entropia quadrática (F).
+
+    Examples:
+        >>> import numpy as np
+        >>> hist = np.array([10, 20, 30])
+        >>> extensive_quadratic_entropy(hist)
+        8
+
+    """
+
+    if not isinstance(hist, np.ndarray):
+        raise ValueError('Unsupported data type')
+
+    num_species = species_richness(hist)
+
+    taxonomic_diversity_distancies = []
+    for i in range(num_species):
+        taxonomic_distance = 0
+        for j in range(num_species):
+            dist = abs(i - j)
+            taxonomic_distance += dist
+
+        taxonomic_diversity_distancies.append(taxonomic_distance)
+
+    return np.sum(taxonomic_diversity_distancies)
