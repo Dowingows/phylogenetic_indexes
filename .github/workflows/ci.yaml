@@ -3,7 +3,7 @@ on: [push, pull_request]
 
 jobs:
   test:
-    runs-one: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Clone project
