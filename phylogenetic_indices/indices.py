@@ -72,9 +72,9 @@ def taxonomic_distinction(hist: np) -> int:
     return taxonomic_distinction
 
 
-def taxonomic_diversity(hist):
+def taxonomic_diversity(hist: np) -> int:
     """
-    Calculata a diversidade taxonômica.
+    Calcula a diversidade taxonômica.
 
     Args:
       hist: Histograma de abundância de espécies.
@@ -87,6 +87,9 @@ def taxonomic_diversity(hist):
         >>> taxonomic_diversity(hist)
         1.5819209039548023
     """
+
+    if not isinstance(hist, np.ndarray):
+        raise ValueError('Unsupported data type')
 
     num_species = species_richness(hist)
 

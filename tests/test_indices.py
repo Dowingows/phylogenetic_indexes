@@ -4,6 +4,7 @@ import pytest
 from phylogenetic_indices.indices import (
     species_richness,
     taxonomic_distinction,
+    taxonomic_diversity,
 )
 
 
@@ -26,3 +27,10 @@ def test_taxonomic_distinction_error():
 
     with pytest.raises(ValueError, match='Unsupported data type'):
         taxonomic_distinction(hist_list)
+
+
+def test_taxonomic_diversity_error():
+    hist_list = [0, 5, 8, 0, 3]
+
+    with pytest.raises(ValueError, match='Unsupported data type'):
+        taxonomic_diversity(hist_list)
