@@ -37,7 +37,7 @@ def taxonomic_distinction(hist: np) -> int:
     Esta função recebe um histograma de abundância de espécies como entrada e retorna o índice de distinção taxonômica. A função calcula a distância taxonômica média entre todos os pares de espécies, ponderada por suas abundâncias, e então divide esse valor pela abundância total ao quadrado.
 
     Args:
-      hist: Um histograma de abundância de espécies.
+      hist: Histograma de abundância de espécies.
 
     Returns:
       O índice de distinção taxonômica.
@@ -55,8 +55,6 @@ def taxonomic_distinction(hist: np) -> int:
     if not isinstance(hist, np.ndarray):
         raise ValueError('Unsupported data type')
 
-    hist = hist[hist > 0]
-
     num_species = len(hist)
 
     mean_dist = 0
@@ -72,3 +70,41 @@ def taxonomic_distinction(hist: np) -> int:
     )
 
     return taxonomic_distinction
+
+
+def taxonomic_diversity(hist):
+    """
+    Calculata a diversidade taxonômica.
+
+    Args:
+      hist: Histograma de abundância de espécies.
+
+    Returns:
+        O índice de diversidade taxonômica.
+    Examples:
+        >>> import numpy as np
+        >>> hist = np.array([10, 20, 30])
+        >>> taxonomic_diversity(hist)
+        1.5819209039548023
+    """
+
+    num_species = species_richness(hist)
+
+    taxonomic_diversity_species = []
+    for i in range(num_species):
+        taxonomic_distance = 0
+        for j in range(num_species):
+            dist = abs(i - j)
+            taxonomic_distance += dist * hist[i] * hist[j]
+
+        taxonomic_diversity_species.append(taxonomic_distance)
+
+    total_number_species = np.sum(hist)
+
+    taxonomic_diversity = (
+        2
+        * np.sum(taxonomic_diversity_species)
+        / (total_number_species * (total_number_species - 1))
+    )
+
+    return taxonomic_diversity
