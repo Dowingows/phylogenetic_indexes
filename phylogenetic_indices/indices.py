@@ -96,12 +96,12 @@ def taxonomic_diversity(hist: np) -> float:
     if not isinstance(hist, np.ndarray):
         raise ValueError('Unsupported data type')
 
-    num_species = species_richness(hist)
+    richness = species_richness(hist)
 
     taxonomic_diversity_distancies = []
-    for i in range(num_species):
+    for i in range(richness):
         taxonomic_distance = 0
-        for j in range(num_species):
+        for j in range(richness):
             dist = abs(i - j)
             taxonomic_distance += dist * hist[i] * hist[j]
 
@@ -142,15 +142,46 @@ def extensive_quadratic_entropy(hist: np) -> float:
     if not isinstance(hist, np.ndarray):
         raise ValueError('Unsupported data type')
 
-    num_species = species_richness(hist)
+    richness = species_richness(hist)
 
     taxonomic_diversity_distancies = []
-    for i in range(num_species):
+    for i in range(richness):
         taxonomic_distance = 0
-        for j in range(num_species):
+        for j in range(richness):
             dist = abs(i - j)
             taxonomic_distance += dist
 
         taxonomic_diversity_distancies.append(taxonomic_distance)
 
     return np.sum(taxonomic_diversity_distancies)
+
+
+def intensive_quadratic_entropy(hist: np) -> float:
+
+    """
+    Calcula o índice de entropia quadrática intensiva (J)
+
+    O índice de entropia quadrática intensiva (J) é a distância filogenética média entre duas espécies escolhidas aleatoriamente.
+
+    Args:
+      hist: Histograma de abundância de espécies.
+
+    Returns:
+        O índice de entropia quadrática intensiva (J).
+
+    Examples:
+        >>> import numpy as np
+        >>> hist = np.array([10, 20, 30])
+        >>> intensive_quadratic_entropy(hist)
+        0.8888888888888888
+
+    """
+
+    if not isinstance(hist, np.ndarray):
+        raise ValueError('Unsupported data type')
+
+    richness = species_richness(hist)
+
+    quadratic_entropy = extensive_quadratic_entropy(hist) / richness**2
+
+    return quadratic_entropy
