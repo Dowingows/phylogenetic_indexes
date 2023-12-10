@@ -4,6 +4,15 @@ version = "1.0.0"
 description = ""
 authors = ["Domingos Dias"]
 readme = "README.md"
+packages = [{include = "phylogenetic_indices"}]
+classifiers = [
+    "Topic :: Scientific/Engineering :: Image Processing",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Natural Language :: Portuguese (Brazilian)",
+    "Development Status :: 2 - Pre-Alpha"
+]
 
 [tool.poetry.dependencies]
 python = "^3.12"
