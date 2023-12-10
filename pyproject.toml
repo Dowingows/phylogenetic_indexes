@@ -1,7 +1,8 @@
 [tool.poetry]
 name = "phylogenetic-indices"
 version = "1.0.0"
-description = ""
+description = "Índices Filogenéticos é uma biblioteca Python que fornece funções para calcular vários índices de diversidade taxonômica (TD) a partir de histogramas de abundância de espécies."
+license = "MIT"
 authors = ["Domingos Dias"]
 readme = "README.md"
 packages = [{include = "phylogenetic_indices"}]
