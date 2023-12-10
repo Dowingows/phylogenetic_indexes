@@ -1,6 +1,6 @@
 # Índices Filogenéticos
 
-![CI](https://github.com/Dowingows/phylogenetic_indices/actions/workflows/WORKFLOW-FILE/badge.svg)
+![CI](https://github.com/Dowingows/phylogenetic_indices/actions/workflows/ci.yaml/badge.svg)
 
 ## Visão Geral
 
