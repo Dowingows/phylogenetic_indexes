@@ -14,7 +14,14 @@
 - Cálculo da entropia quadrática extensiva (F).
 - Cálculo da entropia quadrática intensiva (J).
 
+## Instalação
 
 ```bash
 pip install phylogenetic-indices
-```
+``` 
+
+Documentação
+HTML documentação: https://readthedocs.org/projects/phylogenetic-indices
+
+
+
