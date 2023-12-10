@@ -1,6 +1,6 @@
 # Índices Filogenéticos
 
-![CI](https://github.com/Dowingows/phylogenetic_indices/actions/workflows/ci.yaml/badge.svg)
+[![Documentation Status](https://readthedocs.org/projects/phylogenetic-indices/badge/?version=latest)](https://phylogenetic-indices.readthedocs.io/pt/latest/?badge=latest) ![CI](https://github.com/Dowingows/phylogenetic_indices/actions/workflows/ci.yaml/badge.svg)
 
 ## Visão Geral
 
@@ -22,6 +22,3 @@ pip install phylogenetic-indices
 
 Documentação
 HTML documentação: https://readthedocs.org/projects/phylogenetic-indices
-
-
-
